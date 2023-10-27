@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  Gratus
-//
-//  Created by Victor Campos on 27/10/23.
-//
-
 import CoreData
 
 struct PersistenceController {
