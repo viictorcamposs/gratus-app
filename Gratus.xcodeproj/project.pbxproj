@@ -13,6 +13,7 @@
 		5717B1CE2AEC57BC00A88B29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5717B1CD2AEC57BC00A88B29 /* Preview Assets.xcassets */; };
 		5717B1D02AEC57BC00A88B29 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717B1CF2AEC57BC00A88B29 /* Persistence.swift */; };
 		5717B1D32AEC57BC00A88B29 /* Gratus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5717B1D12AEC57BC00A88B29 /* Gratus.xcdatamodeld */; };
+		5717B1DB2AEC5B7A00A88B29 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		5717B1CD2AEC57BC00A88B29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5717B1CF2AEC57BC00A88B29 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5717B1D22AEC57BC00A88B29 /* Gratus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gratus.xcdatamodel; sourceTree = "<group>"; };
+		5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardView.swift; path = ../../../gratus/Gratus/Views/OnboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		5717B1C52AEC57B900A88B29 /* Gratus */ = {
 			isa = PBXGroup;
 			children = (
+				5717B1D92AEC5B5500A88B29 /* Views */,
 				5717B1C62AEC57B900A88B29 /* GratusApp.swift */,
 				5717B1C82AEC57B900A88B29 /* ContentView.swift */,
 				5717B1CA2AEC57BC00A88B29 /* Assets.xcassets */,
@@ -71,6 +74,14 @@
 				5717B1CD2AEC57BC00A88B29 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5717B1D92AEC5B5500A88B29 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5717B1D02AEC57BC00A88B29 /* Persistence.swift in Sources */,
+				5717B1DB2AEC5B7A00A88B29 /* OnboardView.swift in Sources */,
 				5717B1D32AEC57BC00A88B29 /* Gratus.xcdatamodeld in Sources */,
 				5717B1C92AEC57B900A88B29 /* ContentView.swift in Sources */,
 				5717B1C72AEC57B900A88B29 /* GratusApp.swift in Sources */,
