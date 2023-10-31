@@ -14,6 +14,8 @@
 		5717B1D02AEC57BC00A88B29 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717B1CF2AEC57BC00A88B29 /* Persistence.swift */; };
 		5717B1D32AEC57BC00A88B29 /* Gratus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5717B1D12AEC57BC00A88B29 /* Gratus.xcdatamodeld */; };
 		5717B1DB2AEC5B7A00A88B29 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */; };
+		57386E2E2AF0639500CC4DD8 /* GAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E2D2AF0639500CC4DD8 /* GAButton.swift */; };
+		57386E302AF06B2A00CC4DD8 /* EntryGratitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E2F2AF06B2A00CC4DD8 /* EntryGratitudeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		5717B1CF2AEC57BC00A88B29 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5717B1D22AEC57BC00A88B29 /* Gratus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gratus.xcdatamodel; sourceTree = "<group>"; };
 		5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardView.swift; path = ../../../gratus/Gratus/Views/OnboardView.swift; sourceTree = "<group>"; };
+		57386E2D2AF0639500CC4DD8 /* GAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAButton.swift; sourceTree = "<group>"; };
+		57386E2F2AF06B2A00CC4DD8 /* EntryGratitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryGratitudeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 		5717B1C52AEC57B900A88B29 /* Gratus */ = {
 			isa = PBXGroup;
 			children = (
+				57386E2C2AF0635300CC4DD8 /* CustomViews */,
 				5717B1D92AEC5B5500A88B29 /* Views */,
 				5717B1C62AEC57B900A88B29 /* GratusApp.swift */,
 				5717B1C82AEC57B900A88B29 /* ContentView.swift */,
@@ -79,9 +84,18 @@
 		5717B1D92AEC5B5500A88B29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				57386E2F2AF06B2A00CC4DD8 /* EntryGratitudeView.swift */,
 				5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		57386E2C2AF0635300CC4DD8 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				57386E2D2AF0639500CC4DD8 /* GAButton.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,8 +171,10 @@
 				5717B1D02AEC57BC00A88B29 /* Persistence.swift in Sources */,
 				5717B1DB2AEC5B7A00A88B29 /* OnboardView.swift in Sources */,
 				5717B1D32AEC57BC00A88B29 /* Gratus.xcdatamodeld in Sources */,
+				57386E302AF06B2A00CC4DD8 /* EntryGratitudeView.swift in Sources */,
 				5717B1C92AEC57B900A88B29 /* ContentView.swift in Sources */,
 				5717B1C72AEC57B900A88B29 /* GratusApp.swift in Sources */,
+				57386E2E2AF0639500CC4DD8 /* GAButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +316,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,7 +346,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
