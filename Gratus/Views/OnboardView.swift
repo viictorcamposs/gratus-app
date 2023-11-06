@@ -1,17 +1,12 @@
 import SwiftUI
 
 struct OnboardView: View {
+    @EnvironmentObject var manager: GratusManager
     @State private var username = String()
-    
-    let defaults = UserDefaults.standard
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.black, Color("DarkerGray")],
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
-            .ignoresSafeArea()
-            
+            BgGradientView()
             
             VStack {
                 Text("Hey there! Welcome to gratus.")
@@ -27,28 +22,20 @@ struct OnboardView: View {
                 UsernameInput(username: $username)
                 
                 Button {
-                    if username == "" {
-                        print("For better experience you must provide your first name")
+                    if username != "" {
+                        manager.username = username
                     } else {
-                        print("Hello, \(username). Welcome to gratus! May this be the beginning of a life full of improvements and achievements.")
+                        // handle error with empty username
                     }
                 } label: {
-                    GAButton(title: "Enter",
-                             bgColor: .gray,
-                             textColor: .white)
+                    Label("Enter", systemImage: "arrow.right")
                 }
-                .scenePadding(.top)
+                .buttonStyle(.bordered)
+                .controlSize(.large)
+                .tint(.white)
             }
         }
     }
-    
-    func addUsernameToUserDefaults() {
-        
-    }
-}
-
-#Preview {
-    OnboardView()
 }
 
 struct UsernameInput: View {
@@ -70,6 +57,11 @@ struct UsernameInput: View {
                 .background(Color.white)
                 .frame(maxWidth: 320)
         }
-        .scenePadding(.vertical)
+        .padding(.vertical, 50)
     }
+}
+
+#Preview {
+    OnboardView()
+        .environmentObject(GratusManager())
 }
