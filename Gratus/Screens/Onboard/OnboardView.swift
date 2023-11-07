@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct OnboardView: View {
+    
     @EnvironmentObject var manager: GratusManager
-    @State private var username = String()
+    @StateObject var viewModel = OnboardViewModel()
     
     var body: some View {
         ZStack {
@@ -19,14 +20,10 @@ struct OnboardView: View {
                     .foregroundStyle(.white)
                 
                 
-                UsernameInput(username: $username)
+                UsernameInput(username: $viewModel.username)
                 
                 Button {
-                    if username != "" {
-                        manager.username = username
-                    } else {
-                        // handle error with empty username
-                    }
+                    viewModel.completeOnboarding(update: manager)
                 } label: {
                     Label("Enter", systemImage: "arrow.right")
                 }
@@ -34,6 +31,14 @@ struct OnboardView: View {
                 .controlSize(.large)
                 .tint(.white)
             }
+            .alert(viewModel.alertTitle, isPresented: $viewModel.didFail) {
+                Button("Ok") {
+                    viewModel.didFail = false
+                }
+            } message: {
+                Text(viewModel.alertMessage)
+            }
+
         }
     }
 }
