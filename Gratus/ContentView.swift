@@ -1,36 +1,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject private var manager: GratusManager
+    @StateObject var manager = GratusManager()
     
     var body: some View {
-        if manager.username != nil {
+        if manager.username.isEmpty {
+            OnboardView()
+                .environmentObject(manager)
+        } else {
             TabView() {
                 CurrentDayGratitudeView()
-                    .environmentObject(manager)
                     .tabItem {
                         Image(systemName: "house.fill").padding(.top, 10)
                     }
                     
-                ZStack {
-                    BgGradientView()
-                    Text("List of gratitude entries")
-                        .foregroundStyle(.white)
-                }
+                GratitudeListView()
                     .tabItem {
                         Image(systemName: "list.bullet.rectangle.fill")
                     }
                     
             }
             .accentColor(.white)
-        } else {
-            OnboardView()
-                .environmentObject(manager)
+            .environmentObject(manager)
         }
     }
 }
 
 #Preview {
     ContentView()
-        .environmentObject(GratusManager())
+        .preferredColorScheme(.dark)
 }
