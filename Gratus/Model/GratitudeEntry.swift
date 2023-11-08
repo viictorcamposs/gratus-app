@@ -5,10 +5,9 @@ struct GratitudeEntry: Hashable, Identifiable {
     
     var createdAt: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.string(from: date)
+        formatter.dateFormat = "dd MMM yyyy"
+        return formatter.string(from: Date())
     }
     
-    let gratitude: String
-    private let date = Date()
+    let text: String
 }

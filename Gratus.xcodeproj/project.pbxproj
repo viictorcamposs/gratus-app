@@ -14,12 +14,14 @@
 		5717B1D02AEC57BC00A88B29 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717B1CF2AEC57BC00A88B29 /* Persistence.swift */; };
 		5717B1D32AEC57BC00A88B29 /* Gratus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5717B1D12AEC57BC00A88B29 /* Gratus.xcdatamodeld */; };
 		5717B1DB2AEC5B7A00A88B29 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */; };
-		57386E2E2AF0639500CC4DD8 /* GAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E2D2AF0639500CC4DD8 /* GAButton.swift */; };
-		57386E302AF06B2A00CC4DD8 /* GratitudeEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E2F2AF06B2A00CC4DD8 /* GratitudeEntryView.swift */; };
+		57386E302AF06B2A00CC4DD8 /* AddGratitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E2F2AF06B2A00CC4DD8 /* AddGratitudeView.swift */; };
 		57386E612AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E602AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift */; };
 		57386E632AF1C31100CC4DD8 /* BgGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E622AF1C31100CC4DD8 /* BgGradientView.swift */; };
 		57386E652AF1CC3000CC4DD8 /* CurrentDayGratitudeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E642AF1CC3000CC4DD8 /* CurrentDayGratitudeViewModel.swift */; };
 		57AE0C1E2AF5E0B1007C26BC /* GratusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AE0C1D2AF5E0B1007C26BC /* GratusManager.swift */; };
+		57AE0C3D2AF92DBF007C26BC /* GratitudeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AE0C3C2AF92DBF007C26BC /* GratitudeEntry.swift */; };
+		57AE0C3F2AF937A3007C26BC /* GratitudeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */; };
+		57AE0C4E2AFA578F007C26BC /* OnboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AE0C4D2AFA578F007C26BC /* OnboardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,13 +32,15 @@
 		5717B1CD2AEC57BC00A88B29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5717B1CF2AEC57BC00A88B29 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5717B1D22AEC57BC00A88B29 /* Gratus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gratus.xcdatamodel; sourceTree = "<group>"; };
-		5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardView.swift; path = ../../../gratus/Gratus/Views/OnboardView.swift; sourceTree = "<group>"; };
-		57386E2D2AF0639500CC4DD8 /* GAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAButton.swift; sourceTree = "<group>"; };
-		57386E2F2AF06B2A00CC4DD8 /* GratitudeEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeEntryView.swift; sourceTree = "<group>"; };
-		57386E602AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentDayGratitudeView.swift; path = Gratus/CurrentDayGratitudeView.swift; sourceTree = SOURCE_ROOT; };
+		5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		57386E2F2AF06B2A00CC4DD8 /* AddGratitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGratitudeView.swift; sourceTree = "<group>"; };
+		57386E602AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentDayGratitudeView.swift; path = Gratus/Screens/CurrentDayGratitude/CurrentDayGratitudeView.swift; sourceTree = SOURCE_ROOT; };
 		57386E622AF1C31100CC4DD8 /* BgGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgGradientView.swift; sourceTree = "<group>"; };
 		57386E642AF1CC3000CC4DD8 /* CurrentDayGratitudeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayGratitudeViewModel.swift; sourceTree = "<group>"; };
 		57AE0C1D2AF5E0B1007C26BC /* GratusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratusManager.swift; sourceTree = "<group>"; };
+		57AE0C3C2AF92DBF007C26BC /* GratitudeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeEntry.swift; sourceTree = "<group>"; };
+		57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeListView.swift; sourceTree = "<group>"; };
+		57AE0C4D2AFA578F007C26BC /* OnboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +73,9 @@
 		5717B1C52AEC57B900A88B29 /* Gratus */ = {
 			isa = PBXGroup;
 			children = (
-				57386E2C2AF0635300CC4DD8 /* CustomViews */,
+				57AE0C4B2AFA5735007C26BC /* Screens */,
 				57386E662AF1CC3600CC4DD8 /* Model */,
 				5717B1D92AEC5B5500A88B29 /* Views */,
-				57386E5D2AF1B0CE00CC4DD8 /* ViewModel */,
 				5717B1C62AEC57B900A88B29 /* GratusApp.swift */,
 				5717B1C82AEC57B900A88B29 /* ContentView.swift */,
 				5717B1CA2AEC57BC00A88B29 /* Assets.xcassets */,
@@ -94,36 +97,55 @@
 		5717B1D92AEC5B5500A88B29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				57386E602AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift */,
-				57386E2F2AF06B2A00CC4DD8 /* GratitudeEntryView.swift */,
-				5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */,
+				57386E622AF1C31100CC4DD8 /* BgGradientView.swift */,
+				57386E2F2AF06B2A00CC4DD8 /* AddGratitudeView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		57386E2C2AF0635300CC4DD8 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				57386E2D2AF0639500CC4DD8 /* GAButton.swift */,
-				57386E622AF1C31100CC4DD8 /* BgGradientView.swift */,
-			);
-			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		57386E5D2AF1B0CE00CC4DD8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				57386E642AF1CC3000CC4DD8 /* CurrentDayGratitudeViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		57386E662AF1CC3600CC4DD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				57AE0C1D2AF5E0B1007C26BC /* GratusManager.swift */,
+				57AE0C3C2AF92DBF007C26BC /* GratitudeEntry.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		57AE0C4B2AFA5735007C26BC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				57AE0C502AFBFBBF007C26BC /* GratitudeList */,
+				57AE0C4F2AFA6E77007C26BC /* CurrentDayGratitude */,
+				57AE0C4C2AFA5740007C26BC /* Onboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		57AE0C4C2AFA5740007C26BC /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				57AE0C4D2AFA578F007C26BC /* OnboardViewModel.swift */,
+				5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		57AE0C4F2AFA6E77007C26BC /* CurrentDayGratitude */ = {
+			isa = PBXGroup;
+			children = (
+				57386E642AF1CC3000CC4DD8 /* CurrentDayGratitudeViewModel.swift */,
+				57386E602AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift */,
+			);
+			path = CurrentDayGratitude;
+			sourceTree = "<group>";
+		};
+		57AE0C502AFBFBBF007C26BC /* GratitudeList */ = {
+			isa = PBXGroup;
+			children = (
+				57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */,
+			);
+			path = GratitudeList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,14 +220,16 @@
 			files = (
 				5717B1D02AEC57BC00A88B29 /* Persistence.swift in Sources */,
 				57386E632AF1C31100CC4DD8 /* BgGradientView.swift in Sources */,
+				57AE0C3F2AF937A3007C26BC /* GratitudeListView.swift in Sources */,
 				5717B1DB2AEC5B7A00A88B29 /* OnboardView.swift in Sources */,
 				5717B1D32AEC57BC00A88B29 /* Gratus.xcdatamodeld in Sources */,
-				57386E302AF06B2A00CC4DD8 /* GratitudeEntryView.swift in Sources */,
+				57386E302AF06B2A00CC4DD8 /* AddGratitudeView.swift in Sources */,
 				57386E652AF1CC3000CC4DD8 /* CurrentDayGratitudeViewModel.swift in Sources */,
+				57AE0C3D2AF92DBF007C26BC /* GratitudeEntry.swift in Sources */,
 				57386E612AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift in Sources */,
 				5717B1C92AEC57B900A88B29 /* ContentView.swift in Sources */,
 				5717B1C72AEC57B900A88B29 /* GratusApp.swift in Sources */,
-				57386E2E2AF0639500CC4DD8 /* GAButton.swift in Sources */,
+				57AE0C4E2AFA578F007C26BC /* OnboardViewModel.swift in Sources */,
 				57AE0C1E2AF5E0B1007C26BC /* GratusManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

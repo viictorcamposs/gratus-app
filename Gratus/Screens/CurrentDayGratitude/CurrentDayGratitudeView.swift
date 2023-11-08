@@ -34,11 +34,11 @@ struct CurrentDayGratitudeView: View {
                     Spacer()
                         .frame(height: 40)
                     
-                    ScrollViewBody(viewModel: viewModel)
+                    ScrollBodyView(viewModel: viewModel)
                 }
                 .foregroundStyle(.white)
                 .fullScreenCover(isPresented: $viewModel.isShowingGratitudeEntry) {
-                    GratitudeEntryView(isShowingGratitudeEntry: $viewModel.isShowingGratitudeEntry)
+                    AddGratitudeView(isShowingGratitudeEntry: $viewModel.isShowingGratitudeEntry)
                 }
             }
         }
@@ -79,7 +79,7 @@ struct WeekDayView: View {
     }
 }
 
-struct ScrollViewBody: View {
+struct ScrollBodyView: View {
     
     @EnvironmentObject var manager: GratusManager
     @ObservedObject var viewModel: CurrentDayGratitudeViewModel

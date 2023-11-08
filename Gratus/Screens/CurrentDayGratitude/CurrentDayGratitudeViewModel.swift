@@ -12,7 +12,7 @@ struct WeekDay: Hashable, Identifiable {
     var isCurrentDay: Bool
     
     var date: String {
-        formatDate(format: "yyyy-MM-dd", date: rawDate)
+        formatDate(format: "dd MMM yyyy", date: rawDate)
     }
     
     var dayString: String {
@@ -38,7 +38,7 @@ final class CurrentDayGratitudeViewModel: ObservableObject {
         didSet {
             if self.selectedWeekDay.isEmpty { return }
             
-            handleSelectedWeekDay(date: self.selectedWeekDay )
+            handleSelectedWeekDay()
         }
     }
     
@@ -68,13 +68,13 @@ final class CurrentDayGratitudeViewModel: ObservableObject {
         } while weekDays.count < 5
     }
     
-    func handleSelectedWeekDay(date selectedDate: String) {
-        let formattedCurrentDate = formatDate(format: "yyyy-MM-dd", date: Date())
+    func handleSelectedWeekDay() {
+        let formattedCurrentDate = formatDate(format: "dd MMM yyyy", date: Date())
         
-        if selectedDate < formattedCurrentDate {
+        if selectedWeekDay < formattedCurrentDate {
             isSelectedWeekDayLaterToCurrentDate = false
             isSelectedWeekDayPreviousToCurrentDate = true
-        } else if selectedDate > formattedCurrentDate {
+        } else if selectedWeekDay > formattedCurrentDate {
             isSelectedWeekDayLaterToCurrentDate = true
             isSelectedWeekDayPreviousToCurrentDate = false
         } else {
