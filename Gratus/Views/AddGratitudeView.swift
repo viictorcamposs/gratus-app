@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct GratitudeEntryView: View {
+struct AddGratitudeView: View {
     @EnvironmentObject var manager: GratusManager
+    
     @State private var fullText = "What are you grateful for?"
     @Binding var isShowingGratitudeEntry: Bool
-    let gratitudeEntryDate: Date
     
     let placeholder = "What are you grateful for?"
     
@@ -33,8 +33,7 @@ struct GratitudeEntryView: View {
                 
                 Button {
                     if fullText != placeholder, fullText != "" {
-                        let gratitude = GratitudeEntry(createdAt: gratitudeEntryDate,
-                                                       gratitude: fullText)
+                        let gratitude = GratitudeEntry(text: fullText)
                         
                         manager.addGratitude(gratitude: gratitude)
                         
@@ -125,7 +124,5 @@ public extension View {
 }
 
 #Preview {
-    GratitudeEntryView(isShowingGratitudeEntry: .constant(false),
-                       gratitudeEntryDate: Date())
-        .environmentObject(GratusManager())
+    AddGratitudeView(isShowingGratitudeEntry: .constant(false))
 }
