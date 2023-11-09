@@ -1,31 +1,20 @@
 import SwiftUI
 
-func formatDate(format: String, date: Date) -> String {
-    let formatter = DateFormatter()
-    formatter.dateFormat = format
-    return formatter.string(from: date)
-}
-
 struct WeekDay: Hashable, Identifiable {
     let id = UUID()
-    private var rawDate: Date
+    var rawDate: Date
     var isCurrentDay: Bool
     
     var date: String {
-        formatDate(format: "dd MMM yyyy", date: rawDate)
+        F.formatDate(format: "dd MMM yyyy", date: rawDate)
     }
     
     var dayString: String {
-        formatDate(format: "EEE", date: rawDate)
+        F.formatDate(format: "EEE", date: rawDate)
     }
     
     var dayNumber: String {
-        formatDate(format: "dd", date: rawDate)
-    }
-    
-    init(rawDate: Date, isCurrentDay: Bool) {
-        self.rawDate = rawDate
-        self.isCurrentDay = isCurrentDay
+        F.formatDate(format: "dd", date: rawDate)
     }
 }
 
@@ -69,7 +58,7 @@ final class CurrentDayGratitudeViewModel: ObservableObject {
     }
     
     func handleSelectedWeekDay() {
-        let formattedCurrentDate = formatDate(format: "dd MMM yyyy", date: Date())
+        let formattedCurrentDate = F.formatDate(format: "dd MMM yyyy", date: Date())
         
         if selectedWeekDay < formattedCurrentDate {
             isSelectedWeekDayLaterToCurrentDate = false
@@ -83,12 +72,12 @@ final class CurrentDayGratitudeViewModel: ObservableObject {
         }
     }
     
-    func getSelectedDayGratitudeEntry(manager: GratusManager) -> String? {
-        let filteredList = manager.gratitudeList.filter { gratitude in
-            gratitude.createdAt == selectedWeekDay
+    func getSelectedDayGratitudeEntry(manager: DataManager) -> String? {
+        let filteredList = manager.gratitudes.filter { gratitude in
+            gratitude.createdAt as! String == selectedWeekDay
         }
         
-        return filteredList.count == 0 ? nil : filteredList[0].text
+        return filteredList.count == 0 ? nil : filteredList[0].message
     }
 }
 

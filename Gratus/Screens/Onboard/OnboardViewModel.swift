@@ -8,7 +8,7 @@ class OnboardViewModel: ObservableObject {
     let alertTitle = "Incomplete Profile"
     let alertMessage = "Oops! It seems you haven't entered your first name. To personalize your experience, please provide your first name."
     
-    func completeOnboarding(update manager: GratusManager) {
+    func completeOnboarding(update manager: DataManager) {
         if username.isEmpty {
             didFail = true
         } else {

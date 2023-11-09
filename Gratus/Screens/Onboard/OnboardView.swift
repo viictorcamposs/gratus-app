@@ -2,7 +2,7 @@ import SwiftUI
 
 struct OnboardView: View {
     
-    @EnvironmentObject var manager: GratusManager
+    @EnvironmentObject var manager: DataManager
     @StateObject var viewModel = OnboardViewModel()
     
     var body: some View {
@@ -68,5 +68,5 @@ struct UsernameInput: View {
 
 #Preview {
     OnboardView()
-        .environmentObject(GratusManager())
+        .environmentObject(DataManager())
 }

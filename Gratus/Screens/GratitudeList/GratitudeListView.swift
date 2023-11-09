@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct GratitudeListView: View {
-    @EnvironmentObject var manager: GratusManager
+    @EnvironmentObject var manager: DataManager
     
     var body: some View {
         NavigationView {
             ZStack {
                 BgGradientView()
                 
-                if manager.gratitudeList.isEmpty {
+                if manager.gratitudes.isEmpty {
                     VStack {
                         Text("No gratitude entry was added yet.")
                             .font(.title)
@@ -18,21 +18,21 @@ struct GratitudeListView: View {
                             .frame(height: 80)
                     }
                 } else {
-                    List(manager.gratitudeList) { gratitude in
+                    List(manager.gratitudes) { gratitude in
                         NavigationLink {
                             ZStack {
                                 BgGradientView()
                                 
                                 ScrollView {
                                     VStack {
-                                        Text(gratitude.createdAt)
+                                        Text(gratitude.message)
                                             .font(.title2)
                                             .bold()
                                         
                                         Spacer()
                                             .frame(height: 60)
                                         
-                                        Text("\"\(gratitude.text)\"")
+                                        Text("\"\(gratitude.message)\"")
                                             .font(.system(size: 28, design: .serif))
                                             .italic()
                                             .multilineTextAlignment(.center)
@@ -44,11 +44,11 @@ struct GratitudeListView: View {
                             }
                         } label: {
                             VStack(alignment: .leading, spacing: 20) {
-                                Text(gratitude.createdAt)
+                                Text(gratitude.createdAt as! String)
                                     .font(.title)
                                     .bold()
                                 
-                                Text(gratitude.text)
+                                Text(gratitude.message)
                                     .foregroundStyle(.white)
                             }
                             .padding(.vertical)
@@ -66,6 +66,6 @@ struct GratitudeListView: View {
 }
 #Preview {
     GratitudeListView()
-        .environmentObject(GratusManager())
+        .environmentObject(DataManager())
         .preferredColorScheme(.dark)
 }

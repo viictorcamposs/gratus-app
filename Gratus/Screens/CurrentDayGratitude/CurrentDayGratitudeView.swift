@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CurrentDayGratitudeView: View {
     
-    @EnvironmentObject var manager: GratusManager
+    @EnvironmentObject var manager: DataManager
     @StateObject var viewModel = CurrentDayGratitudeViewModel()
     
     var body: some View {
@@ -81,7 +81,7 @@ struct WeekDayView: View {
 
 struct ScrollBodyView: View {
     
-    @EnvironmentObject var manager: GratusManager
+    @EnvironmentObject var manager: DataManager
     @ObservedObject var viewModel: CurrentDayGratitudeViewModel
     
     var body: some View {
@@ -135,7 +135,7 @@ struct GratitudeTextView: View {
 
 #Preview {
     CurrentDayGratitudeView()
-        .environmentObject(GratusManager())
+        .environmentObject(DataManager())
 }
 
 

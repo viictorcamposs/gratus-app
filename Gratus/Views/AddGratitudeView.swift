@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AddGratitudeView: View {
-    @EnvironmentObject var manager: GratusManager
+    @EnvironmentObject var manager: DataManager
     
     @State private var fullText = "What are you grateful for?"
     @Binding var isShowingGratitudeEntry: Bool
@@ -33,7 +33,7 @@ struct AddGratitudeView: View {
                 
                 Button {
                     if fullText != placeholder, fullText != "" {
-                        let gratitude = GratitudeEntry(text: fullText)
+                        let gratitude = Gratitude(message: fullText)
                         
                         manager.addGratitude(gratitude: gratitude)
                         
