@@ -22,6 +22,7 @@
 		57AE0C3D2AF92DBF007C26BC /* GratitudeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AE0C3C2AF92DBF007C26BC /* GratitudeEntry.swift */; };
 		57AE0C3F2AF937A3007C26BC /* GratitudeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */; };
 		57AE0C4E2AFA578F007C26BC /* OnboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AE0C4D2AFA578F007C26BC /* OnboardViewModel.swift */; };
+		57AE0C532AFC5959007C26BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AE0C522AFC5959007C26BC /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		57AE0C3C2AF92DBF007C26BC /* GratitudeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeEntry.swift; sourceTree = "<group>"; };
 		57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeListView.swift; sourceTree = "<group>"; };
 		57AE0C4D2AFA578F007C26BC /* OnboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewModel.swift; sourceTree = "<group>"; };
+		57AE0C522AFC5959007C26BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		5717B1C52AEC57B900A88B29 /* Gratus */ = {
 			isa = PBXGroup;
 			children = (
+				57AE0C512AFC5945007C26BC /* Utils */,
 				57AE0C4B2AFA5735007C26BC /* Screens */,
 				57386E662AF1CC3600CC4DD8 /* Model */,
 				5717B1D92AEC5B5500A88B29 /* Views */,
@@ -146,6 +149,14 @@
 				57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */,
 			);
 			path = GratitudeList;
+			sourceTree = "<group>";
+		};
+		57AE0C512AFC5945007C26BC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				57AE0C522AFC5959007C26BC /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +240,7 @@
 				57386E612AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift in Sources */,
 				5717B1C92AEC57B900A88B29 /* ContentView.swift in Sources */,
 				5717B1C72AEC57B900A88B29 /* GratusApp.swift in Sources */,
+				57AE0C532AFC5959007C26BC /* Constants.swift in Sources */,
 				57AE0C4E2AFA578F007C26BC /* OnboardViewModel.swift in Sources */,
 				57AE0C1E2AF5E0B1007C26BC /* GratusManager.swift in Sources */,
 			);
@@ -370,8 +382,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -380,9 +392,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.victorcampos.Gratus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -400,8 +415,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -410,9 +425,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.victorcampos.Gratus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
