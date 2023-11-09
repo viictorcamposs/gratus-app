@@ -1,12 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var manager = GratusManager()
+    @EnvironmentObject var manager: DataManager
     
     var body: some View {
         if manager.username.isEmpty {
             OnboardView()
-                .environmentObject(manager)
         } else {
             TabView() {
                 CurrentDayGratitudeView()
@@ -21,7 +20,6 @@ struct ContentView: View {
                     
             }
             .accentColor(.white)
-            .environmentObject(manager)
         }
     }
 }
@@ -29,4 +27,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .preferredColorScheme(.dark)
+        .environmentObject(DataManager())
 }
