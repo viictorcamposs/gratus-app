@@ -13,7 +13,7 @@ class OnboardViewModel: ObservableObject {
             didFail = true
         } else {
             DispatchQueue.main.async {
-                manager.username = self.username
+                manager.saveUsername(self.username)
             }
         }
     }
