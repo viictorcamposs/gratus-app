@@ -20,9 +20,10 @@ struct WeekDay: Hashable, Identifiable {
 
 final class CurrentDayGratitudeViewModel: ObservableObject {
     
-    @Published var isShowingGratitudeEntry: Bool = false
+    @Published var isShowingGratitudeEntry = false
     @Published var isSelectedWeekDayPreviousToCurrentDate = false
     @Published var isSelectedWeekDayLaterToCurrentDate = false
+    @Published var selectedDayGratitudeEntry: String?
     @Published var selectedWeekDay: String {
         didSet {
             if self.selectedWeekDay.isEmpty { return }
@@ -31,6 +32,7 @@ final class CurrentDayGratitudeViewModel: ObservableObject {
         }
     }
     
+    var manager: DataManager?
     var weekDays: [WeekDay] = []
     
     init() {
@@ -63,21 +65,32 @@ final class CurrentDayGratitudeViewModel: ObservableObject {
         if selectedWeekDay < formattedCurrentDate {
             isSelectedWeekDayLaterToCurrentDate = false
             isSelectedWeekDayPreviousToCurrentDate = true
+            
+            selectedDayGratitudeEntry = getSelectedDayGratitudeEntry()
         } else if selectedWeekDay > formattedCurrentDate {
             isSelectedWeekDayLaterToCurrentDate = true
             isSelectedWeekDayPreviousToCurrentDate = false
         } else {
             isSelectedWeekDayLaterToCurrentDate = false
             isSelectedWeekDayPreviousToCurrentDate = false
+            
+            selectedDayGratitudeEntry = getSelectedDayGratitudeEntry()
         }
     }
     
-    func getSelectedDayGratitudeEntry(manager: DataManager) -> String? {
-        let filteredList = manager.gratitudes.filter { gratitude in
-            gratitude.createdAt as! String == selectedWeekDay
+    func getSelectedDayGratitudeEntry() -> String? {
+        let filteredList = manager!.gratitudes.filter { gratitude in
+            
+            if let date = gratitude.createdAt {
+                let formattedDate = F.formatDate(format: "dd MMM yyyy", date: date)
+                
+                return formattedDate == selectedWeekDay
+            }
+            
+            return false
         }
         
-        return filteredList.count == 0 ? nil : filteredList[0].message
+        return filteredList.isEmpty ? nil : filteredList[0].message
     }
 }
 

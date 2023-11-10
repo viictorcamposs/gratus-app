@@ -3,7 +3,7 @@ import SwiftUI
 struct CurrentDayGratitudeView: View {
     
     @EnvironmentObject var manager: DataManager
-    @StateObject var viewModel = CurrentDayGratitudeViewModel()
+    @StateObject private var viewModel = CurrentDayGratitudeViewModel()
     
     var body: some View {
         ZStack {
@@ -42,6 +42,9 @@ struct CurrentDayGratitudeView: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.manager = manager
+        }
     }
 }
 
@@ -64,7 +67,7 @@ struct WeekDayView: View {
         .overlay {
             if viewModel.selectedWeekDay == weekDay.date {
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(.gray.opacity(0.5), lineWidth: 1)
+                    .stroke(.gray, lineWidth: 2)
                 
             }
         }
@@ -85,51 +88,60 @@ struct ScrollBodyView: View {
     @ObservedObject var viewModel: CurrentDayGratitudeViewModel
     
     var body: some View {
-        if viewModel.isSelectedWeekDayLaterToCurrentDate {
-            Text("Prepare yourself for the next day.")
-                .font(.title3)
+        
+        if let text = viewModel.selectedDayGratitudeEntry {
+            VStack {
+                Text("\"\(text)\"")
+                    .font(.system(size: 28, design: .serif))
+                    .italic()
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: 300)
+            }
+            .padding()
+        } else if viewModel.isSelectedWeekDayLaterToCurrentDate {
+            SelectedDayWithoutEntryView(title: "Prepare yourself for the next day.",
+                                        icon: "calendar.badge.clock")
         } else if viewModel.isSelectedWeekDayPreviousToCurrentDate {
-            if let gratitude = viewModel.getSelectedDayGratitudeEntry(manager: manager) {
-                GratitudeTextView(text: gratitude)
-            } else {
-                Text("No gratitude added to this day.")
-                    .font(.title3)
-            }
+            SelectedDayWithoutEntryView(title: "No gratitude added to this day.",
+                                        icon: "calendar.badge.exclamationmark")
         } else {
-            if let gratitude = viewModel.getSelectedDayGratitudeEntry(manager: manager) {
-                GratitudeTextView(text: gratitude)
-            } else {
-                VStack {
-                    Text("Add your gratitude for the day")
-                        .font(.title3)
-                        .padding(.bottom, 20)
-                    
-                    Button {
-                        viewModel.isShowingGratitudeEntry = true
-                    } label: {
-                        Label("Add gratitude", systemImage: "plus.app.fill")
-                            .font(.system(size: 34))
-                            .labelStyle(.iconOnly)
-                            .padding(10)
-                    }
-                }
+            Text("Add your gratitude for the day")
+                .font(.title3)
+                .bold()
+                .padding(.bottom, 20)
+            
+            Button {
+                viewModel.isShowingGratitudeEntry = true
+            } label: {
+                Label("Add gratitude", systemImage: "plus")
+                    .font(.system(size: 18, weight: .bold))
+                    .labelStyle(.iconOnly)
+                    .frame(width: 100, height: 28)
             }
+            .buttonStyle(.borderedProminent)
+            .tint(.gray)
         }
     }
 }
 
-struct GratitudeTextView: View {
-    var text: String
+struct SelectedDayWithoutEntryView: View {
+    
+    let title: String
+    let icon: String
     
     var body: some View {
-        VStack {
-            Text("\"\(text)\"")
-                .font(.system(size: 28, design: .serif))
-                .italic()
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: 300)
-        }
-        .padding()
+        Text(title)
+            .font(.title3)
+            .bold()
+            .foregroundStyle(.gray)
+            .padding(.bottom, 20)
+        
+        Image(systemName: icon)
+            .symbolRenderingMode(.palette)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 100, height: 100)
+            .foregroundStyle(.gray, .gray.opacity(0.4))
     }
 }
 
