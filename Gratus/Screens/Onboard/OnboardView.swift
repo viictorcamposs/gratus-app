@@ -22,18 +22,9 @@ struct OnboardView: View {
                 
                 UsernameInput(username: $viewModel.username)
                 
-                Button {
+                GAButton(title: "Complete onboarding", icon: "arrow.right") {
                     viewModel.completeOnboarding(update: manager)
-                } label: {
-                    Label("Enter", systemImage: "arrow.right")
-                        .font(.system(size: 18, weight: .bold))
-                        .labelStyle(.iconOnly)
-                        .frame(width: 80, height: 32)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(.gray)
-                
-                
+                }  
             }
             .alert(viewModel.alertTitle, isPresented: $viewModel.didFail) {
                 Button("Ok") {

@@ -61,7 +61,7 @@ struct WeekDayView: View {
             Text(weekDay.dayNumber)
                 .font(.system(size: 14, weight: .black))
         }
-        .foregroundStyle(viewModel.selectedWeekDay == weekDay.date ? .white : .gray.opacity(0.5))
+        .foregroundStyle(viewModel.selectedWeekDay == weekDay.date ? .white : .gray.opacity(0.4))
         .frame(width: 60, height: 60)
         .clipShape(.rect(cornerRadius: 8))
         .overlay {
@@ -109,16 +109,9 @@ struct ScrollBodyView: View {
                 .bold()
                 .padding(.bottom, 30)
             
-            Button {
+            GAButton(title: "Add gratitude", icon: "plus") {
                 viewModel.isShowingGratitudeEntry = true
-            } label: {
-                Label("Add gratitude", systemImage: "plus")
-                    .font(.system(size: 18, weight: .bold))
-                    .labelStyle(.iconOnly)
-                    .frame(width: 80, height: 32)
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.gray)
         }
     }
 }

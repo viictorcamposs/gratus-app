@@ -27,16 +27,9 @@ struct GratitudeListView: View {
                         Spacer()
                             .frame(height: 60)
                         
-                        Button {
+                        GAButton(title: "Add gratitude", icon: "plus") {
                             viewModel.isShowingGratitudeEntry = true
-                        } label: {
-                            Label("Add gratitude", systemImage: "plus")
-                                .font(.system(size: 18, weight: .bold))
-                                .labelStyle(.iconOnly)
-                                .frame(width: 80, height: 32)
                         }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.gray)
                         
                         Spacer()
                             .frame(height: 80)
