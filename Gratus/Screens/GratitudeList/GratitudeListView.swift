@@ -12,9 +12,31 @@ struct GratitudeListView: View {
                 
                 if manager.gratitudes.isEmpty {
                     VStack {
-                        Text("No gratitude entry was added yet.")
-                            .font(.title)
+                        Text("Add your first gratitude")
+                            .font(.title3)
                             .bold()
+                            .foregroundStyle(.gray)
+                            .padding(.bottom, 20)
+                        
+                        Image(systemName: "tray.and.arrow.down")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100)
+                            .foregroundStyle(.gray.opacity(0.4))
+                        
+                        Spacer()
+                            .frame(height: 60)
+                        
+                        Button {
+                            viewModel.isShowingGratitudeEntry = true
+                        } label: {
+                            Label("Add gratitude", systemImage: "plus")
+                                .font(.system(size: 18, weight: .bold))
+                                .labelStyle(.iconOnly)
+                                .frame(width: 80, height: 28)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.gray)
                         
                         Spacer()
                             .frame(height: 80)
@@ -69,6 +91,9 @@ struct GratitudeListView: View {
         .tint(.white)
         .onAppear {
             viewModel.readGratitudesListData(manager: manager)
+        }
+        .fullScreenCover(isPresented: $viewModel.isShowingGratitudeEntry) {
+            AddGratitudeView(isShowingGratitudeEntry: $viewModel.isShowingGratitudeEntry)
         }
     }
 }
