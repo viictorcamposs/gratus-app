@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct GratitudeListView: View {
+    
     @EnvironmentObject var manager: DataManager
+    @StateObject private var viewModel = GratitudeListViewModel()
     
     var body: some View {
         NavigationView {
@@ -18,14 +20,15 @@ struct GratitudeListView: View {
                             .frame(height: 80)
                     }
                 } else {
-                    List(manager.gratitudes) { gratitude in
+                    List(viewModel.gratitudes) { gratitude in
+                        
                         NavigationLink {
                             ZStack {
                                 BgGradientView()
                                 
                                 ScrollView {
                                     VStack {
-                                        Text(gratitude.message)
+                                        Text(gratitude.createdAt as! String)
                                             .font(.title2)
                                             .bold()
                                         
@@ -45,16 +48,18 @@ struct GratitudeListView: View {
                         } label: {
                             VStack(alignment: .leading, spacing: 20) {
                                 Text(gratitude.createdAt as! String)
-                                    .font(.title)
-                                    .bold()
+                                    .font(.headline)
                                 
                                 Text(gratitude.message)
-                                    .foregroundStyle(.white)
+                                    .lineLimit(2)
+                                    
                             }
+                            .foregroundStyle(.white)
                             .padding(.vertical)
                         }
                         .listRowSeparator(.hidden, edges: .all)
                         .listRowBackground(Color.clear)
+                        
                     }
                     .listStyle(.plain)
                 }
@@ -62,6 +67,9 @@ struct GratitudeListView: View {
             .navigationTitle("My list of gratitudes")
         }
         .tint(.white)
+        .onAppear {
+            viewModel.readGratitudesListData(manager: manager)
+        }
     }
 }
 #Preview {
