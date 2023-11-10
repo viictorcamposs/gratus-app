@@ -37,15 +37,16 @@ struct AddGratitudeView: View {
                         
                         manager.addGratitude(gratitude: gratitude)
                         
-                        isShowingGratitudeEntry.toggle()
+                        isShowingGratitudeEntry = false
                     }
                 } label: {
-                    Label("Save", systemImage: "checkmark")
-                        .font(.system(size: 20, weight: .bold))
+                    Label("Save gratitude", systemImage: "checkmark")
+                        .font(.system(size: 18, weight: .bold))
+                        .labelStyle(.iconOnly)
+                        .frame(width: 80, height: 32)
                 }
-                .buttonStyle(.bordered)
-                .controlSize(.large)
-                .tint(.white)
+                .buttonStyle(.borderedProminent)
+                .tint(.gray)
             }
             .padding(.horizontal, 20)
         }

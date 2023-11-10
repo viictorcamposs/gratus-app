@@ -78,9 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				57AE0C512AFC5945007C26BC /* Utils */,
-				57AE0C4B2AFA5735007C26BC /* Screens */,
 				57386E662AF1CC3600CC4DD8 /* Model */,
 				5717B1D92AEC5B5500A88B29 /* Views */,
+				57AE0C4B2AFA5735007C26BC /* Screens */,
 				5717B1C62AEC57B900A88B29 /* GratusApp.swift */,
 				5717B1C82AEC57B900A88B29 /* ContentView.swift */,
 				5717B1CA2AEC57BC00A88B29 /* Assets.xcassets */,

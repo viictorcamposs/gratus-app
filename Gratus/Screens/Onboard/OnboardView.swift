@@ -26,10 +26,14 @@ struct OnboardView: View {
                     viewModel.completeOnboarding(update: manager)
                 } label: {
                     Label("Enter", systemImage: "arrow.right")
+                        .font(.system(size: 18, weight: .bold))
+                        .labelStyle(.iconOnly)
+                        .frame(width: 80, height: 32)
                 }
-                .buttonStyle(.bordered)
-                .controlSize(.large)
-                .tint(.white)
+                .buttonStyle(.borderedProminent)
+                .tint(.gray)
+                
+                
             }
             .alert(viewModel.alertTitle, isPresented: $viewModel.didFail) {
                 Button("Ok") {
@@ -62,7 +66,8 @@ struct UsernameInput: View {
                 .background(Color.white)
                 .frame(maxWidth: 320)
         }
-        .padding(.vertical, 50)
+        .padding(.top, 50)
+        .padding(.bottom, 30)
     }
 }
 

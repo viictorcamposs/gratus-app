@@ -84,7 +84,6 @@ struct WeekDayView: View {
 
 struct ScrollBodyView: View {
     
-    @EnvironmentObject var manager: DataManager
     @ObservedObject var viewModel: CurrentDayGratitudeViewModel
     
     var body: some View {
@@ -108,7 +107,7 @@ struct ScrollBodyView: View {
             Text("Add your gratitude for the day")
                 .font(.title3)
                 .bold()
-                .padding(.bottom, 20)
+                .padding(.bottom, 30)
             
             Button {
                 viewModel.isShowingGratitudeEntry = true
@@ -116,7 +115,7 @@ struct ScrollBodyView: View {
                 Label("Add gratitude", systemImage: "plus")
                     .font(.system(size: 18, weight: .bold))
                     .labelStyle(.iconOnly)
-                    .frame(width: 100, height: 28)
+                    .frame(width: 80, height: 32)
             }
             .buttonStyle(.borderedProminent)
             .tint(.gray)
@@ -134,13 +133,13 @@ struct SelectedDayWithoutEntryView: View {
             .font(.title3)
             .bold()
             .foregroundStyle(.gray)
-            .padding(.bottom, 20)
+            .padding(.bottom, 30)
         
         Image(systemName: icon)
             .symbolRenderingMode(.palette)
             .resizable()
             .scaledToFit()
-            .frame(width: 100, height: 100)
+            .frame(width: 100, height: 90)
             .foregroundStyle(.gray, .gray.opacity(0.4))
     }
 }

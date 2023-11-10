@@ -33,7 +33,7 @@ struct GratitudeListView: View {
                             Label("Add gratitude", systemImage: "plus")
                                 .font(.system(size: 18, weight: .bold))
                                 .labelStyle(.iconOnly)
-                                .frame(width: 80, height: 28)
+                                .frame(width: 80, height: 32)
                         }
                         .buttonStyle(.borderedProminent)
                         .tint(.gray)
