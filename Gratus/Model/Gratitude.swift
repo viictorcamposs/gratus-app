@@ -6,8 +6,8 @@ struct Gratitude: Identifiable {
     var message: String
     
     init(message: String) {
-        self.createdAt = Date()
         self.message = message
+        self.createdAt = Date()
     }
     
     init(entity: GratitudeEntity) {

@@ -4,7 +4,7 @@ import Foundation
 final class DataManager: ObservableObject {
     
     @Published var username = String()
-    @Published var gratitudes: [Gratitude] = []
+    @Published var gratitudes: [GratitudeEntity] = []
     
     let defaults = UserDefaults.standard
     
@@ -35,10 +35,7 @@ final class DataManager: ObservableObject {
         let request = NSFetchRequest<GratitudeEntity>(entityName: "GratitudeEntity")
         
         do {
-            gratitudes = try container.viewContext.fetch(request).map { gratitudeEntity in
-                Gratitude(entity: gratitudeEntity)
-            }
-            
+            gratitudes = try container.viewContext.fetch(request)
         } catch {
             print("Error fetching GratitudeEntity.: \(error)")
         }
@@ -49,7 +46,7 @@ final class DataManager: ObservableObject {
         
         newGratitude.id = gratitude.id
         newGratitude.message = gratitude.message
-        newGratitude.createdAt = (gratitude.createdAt as! Date)
+        newGratitude.createdAt = gratitude.createdAt as? Date
         
         saveData()
     }

@@ -23,6 +23,7 @@
 		57C557022AFD44D8000601DA /* Gratitude.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C557012AFD44D8000601DA /* Gratitude.swift */; };
 		57C557052AFD468B000601DA /* GratitudesContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57C557032AFD468B000601DA /* GratitudesContainer.xcdatamodeld */; };
 		57C557082AFD5EA0000601DA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C557072AFD5EA0000601DA /* Functions.swift */; };
+		57C5570C2AFD81DA000601DA /* GratitudeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5570B2AFD81DA000601DA /* GratitudeListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		57C557012AFD44D8000601DA /* Gratitude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gratitude.swift; sourceTree = "<group>"; };
 		57C557042AFD468B000601DA /* GratitudesContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GratitudesContainer.xcdatamodel; sourceTree = "<group>"; };
 		57C557072AFD5EA0000601DA /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		57C5570B2AFD81DA000601DA /* GratitudeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */,
+				57C5570B2AFD81DA000601DA /* GratitudeListViewModel.swift */,
 			);
 			path = GratitudeList;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C5570C2AFD81DA000601DA /* GratitudeListViewModel.swift in Sources */,
 				57386E632AF1C31100CC4DD8 /* BgGradientView.swift in Sources */,
 				57AE0C3F2AF937A3007C26BC /* GratitudeListView.swift in Sources */,
 				5717B1DB2AEC5B7A00A88B29 /* OnboardView.swift in Sources */,
