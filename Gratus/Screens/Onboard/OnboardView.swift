@@ -10,6 +10,17 @@ struct OnboardView: View {
             BgGradientView()
             
             VStack {
+                Spacer()
+                    .frame(height: 120)
+                
+                Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 60, height: 60)
+                    .clipShape(.rect(cornerRadius: 10))
+                    .shadow(color: .gray,radius: 20)
+                    .padding(.bottom, 60)
+                
                 Text("Hey there! Welcome to gratus.")
                     .font(.system(size: 24))
                     .padding(.bottom)
@@ -24,7 +35,9 @@ struct OnboardView: View {
                 
                 GAButton(title: "Complete onboarding", icon: "arrow.right") {
                     viewModel.completeOnboarding(update: manager)
-                }  
+                }
+                
+                Spacer()
             }
             .alert(viewModel.alertTitle, isPresented: $viewModel.didFail) {
                 Button("Ok") {
@@ -65,4 +78,5 @@ struct UsernameInput: View {
 #Preview {
     OnboardView()
         .environmentObject(DataManager())
+        .preferredColorScheme(.dark)
 }
