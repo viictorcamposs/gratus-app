@@ -6,40 +6,36 @@ struct CurrentDayGratitudeView: View {
     @StateObject private var viewModel = CurrentDayGratitudeViewModel()
     
     var body: some View {
-        ZStack {
-            BgGradientView()
-            
-            VStack {
-                VStack(spacing: 20) {
-                    HStack(spacing: 10) {
-                        ForEach(viewModel.weekDays) {
-                            WeekDayView(viewModel: viewModel, weekDay: $0)
-                        }
+        VStack {
+            VStack(spacing: 20) {
+                HStack(spacing: 10) {
+                    ForEach(viewModel.weekDays) {
+                        WeekDayView(viewModel: viewModel, weekDay: $0)
                     }
-                    
-                    Divider()
-                        .background(Color.gray)
                 }
                 
-                ScrollView {
-                    HStack {
-                        Text("Welcome, \(manager.username)")
-                            .font(.system(size: 34, weight: .semibold))
-                        
-                        Spacer()
-                    }
-                    .padding()
-                    .foregroundStyle(.white)
+                Divider()
+                    .background(Color.gray)
+            }
+            
+            ScrollView {
+                HStack {
+                    Text("Welcome, \(manager.username)")
+                        .font(.system(size: 34, weight: .semibold))
                     
                     Spacer()
-                        .frame(height: 40)
-                    
-                    ScrollBodyView(viewModel: viewModel)
                 }
+                .padding()
                 .foregroundStyle(.white)
-                .fullScreenCover(isPresented: $viewModel.isShowingGratitudeEntry) {
-                    AddGratitudeView(isShowingGratitudeEntry: $viewModel.isShowingGratitudeEntry)
-                }
+                
+                Spacer()
+                    .frame(height: 40)
+                
+                ScrollBodyView(viewModel: viewModel)
+            }
+            .foregroundStyle(.white)
+            .fullScreenCover(isPresented: $viewModel.isShowingGratitudeEntry) {
+                AddGratitudeView(isShowingGratitudeEntry: $viewModel.isShowingGratitudeEntry)
             }
         }
         .onAppear {
@@ -140,6 +136,5 @@ struct SelectedDayWithoutEntryView: View {
 #Preview {
     CurrentDayGratitudeView()
         .environmentObject(DataManager())
+        .preferredColorScheme(.dark)
 }
-
-

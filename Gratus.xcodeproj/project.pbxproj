@@ -14,7 +14,6 @@
 		5717B1DB2AEC5B7A00A88B29 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */; };
 		57386E302AF06B2A00CC4DD8 /* AddGratitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E2F2AF06B2A00CC4DD8 /* AddGratitudeView.swift */; };
 		57386E612AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E602AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift */; };
-		57386E632AF1C31100CC4DD8 /* BgGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E622AF1C31100CC4DD8 /* BgGradientView.swift */; };
 		57386E652AF1CC3000CC4DD8 /* CurrentDayGratitudeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386E642AF1CC3000CC4DD8 /* CurrentDayGratitudeViewModel.swift */; };
 		57AE0C1E2AF5E0B1007C26BC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AE0C1D2AF5E0B1007C26BC /* DataManager.swift */; };
 		57AE0C3F2AF937A3007C26BC /* GratitudeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */; };
@@ -36,7 +35,6 @@
 		5717B1DA2AEC5B7A00A88B29 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		57386E2F2AF06B2A00CC4DD8 /* AddGratitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGratitudeView.swift; sourceTree = "<group>"; };
 		57386E602AF1B8DF00CC4DD8 /* CurrentDayGratitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentDayGratitudeView.swift; path = Gratus/Screens/CurrentDayGratitude/CurrentDayGratitudeView.swift; sourceTree = SOURCE_ROOT; };
-		57386E622AF1C31100CC4DD8 /* BgGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgGradientView.swift; sourceTree = "<group>"; };
 		57386E642AF1CC3000CC4DD8 /* CurrentDayGratitudeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayGratitudeViewModel.swift; sourceTree = "<group>"; };
 		57AE0C1D2AF5E0B1007C26BC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeListView.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 		5717B1D92AEC5B5500A88B29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				57386E622AF1C31100CC4DD8 /* BgGradientView.swift */,
 				57386E2F2AF06B2A00CC4DD8 /* AddGratitudeView.swift */,
 				57C5570D2AFED8E7000601DA /* GAButton.swift */,
 			);
@@ -150,8 +147,8 @@
 		57AE0C502AFBFBBF007C26BC /* GratitudeList */ = {
 			isa = PBXGroup;
 			children = (
-				57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */,
 				57C5570B2AFD81DA000601DA /* GratitudeListViewModel.swift */,
+				57AE0C3E2AF937A3007C26BC /* GratitudeListView.swift */,
 			);
 			path = GratitudeList;
 			sourceTree = "<group>";
@@ -236,7 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				57C5570C2AFD81DA000601DA /* GratitudeListViewModel.swift in Sources */,
-				57386E632AF1C31100CC4DD8 /* BgGradientView.swift in Sources */,
 				57AE0C3F2AF937A3007C26BC /* GratitudeListView.swift in Sources */,
 				5717B1DB2AEC5B7A00A88B29 /* OnboardView.swift in Sources */,
 				57C557082AFD5EA0000601DA /* Functions.swift in Sources */,

@@ -9,47 +9,43 @@ struct AddGratitudeView: View {
     let placeholder = "What are you grateful for?"
     
     var body: some View {
-        ZStack {
-            BgGradientView()
-            
-            VStack {
-                HStack {
-                    Spacer()
-                    
-                    Button {
-                        isShowingGratitudeEntry.toggle()
-                    } label: {
-                        Label("Dismiss screen cover", systemImage: "xmark")
-                            .font(.title2)
-                            .labelStyle(.iconOnly)
-                            .foregroundStyle(.white)
-                    }
-                }
-                
-                HeadingView()
-                
-                GratitudeInputView(fullText: $fullText,
-                                   placeholder: placeholder)
+        VStack {
+            HStack {
+                Spacer()
                 
                 Button {
-                    if fullText != placeholder, fullText != "" {
-                        let gratitude = Gratitude(message: fullText)
-                        
-                        manager.addGratitude(gratitude: gratitude)
-                        
-                        isShowingGratitudeEntry = false
-                    }
+                    isShowingGratitudeEntry.toggle()
                 } label: {
-                    Label("Save gratitude", systemImage: "checkmark")
-                        .font(.system(size: 18, weight: .bold))
+                    Label("Dismiss screen cover", systemImage: "xmark")
+                        .font(.title2)
                         .labelStyle(.iconOnly)
-                        .frame(width: 80, height: 32)
+                        .foregroundStyle(.white)
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(.gray)
             }
-            .padding(.horizontal, 20)
+            
+            HeadingView()
+            
+            GratitudeInputView(fullText: $fullText,
+                               placeholder: placeholder)
+            
+            Button {
+                if fullText != placeholder, fullText != "" {
+                    let gratitude = Gratitude(message: fullText)
+                    
+                    manager.addGratitude(gratitude: gratitude)
+                    
+                    isShowingGratitudeEntry = false
+                }
+            } label: {
+                Label("Save gratitude", systemImage: "checkmark")
+                    .font(.system(size: 18, weight: .bold))
+                    .labelStyle(.iconOnly)
+                    .frame(width: 80, height: 32)
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(.gray)
         }
+        .padding(.horizontal, 20)
     }
 }
 
@@ -126,4 +122,5 @@ public extension View {
 
 #Preview {
     AddGratitudeView(isShowingGratitudeEntry: .constant(false))
+        .preferredColorScheme(.dark)
 }
