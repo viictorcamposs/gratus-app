@@ -35,11 +35,17 @@ struct CurrentDayGratitudeView: View {
             }
             .foregroundStyle(.white)
             .fullScreenCover(isPresented: $viewModel.isShowingGratitudeEntry) {
-                AddGratitudeView(isShowingGratitudeEntry: $viewModel.isShowingGratitudeEntry)
+                AddGratitudeView(isShowingGratitudeEntry: $viewModel.isShowingGratitudeEntry) {
+                    viewModel.updateSelectedDayGratitudeEntry()
+                }
             }
         }
         .onAppear {
             viewModel.manager = manager
+            
+            if viewModel.selectedDayGratitudeEntry == nil {
+                viewModel.updateSelectedDayGratitudeEntry()
+            }
         }
     }
 }
@@ -83,7 +89,6 @@ struct ScrollBodyView: View {
     @ObservedObject var viewModel: CurrentDayGratitudeViewModel
     
     var body: some View {
-        
         if let text = viewModel.selectedDayGratitudeEntry {
             VStack {
                 Text("\"\(text)\"")

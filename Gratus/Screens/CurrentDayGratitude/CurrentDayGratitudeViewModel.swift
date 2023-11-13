@@ -66,7 +66,7 @@ final class CurrentDayGratitudeViewModel: ObservableObject {
             isSelectedWeekDayLaterToCurrentDate = false
             isSelectedWeekDayPreviousToCurrentDate = true
             
-            selectedDayGratitudeEntry = getSelectedDayGratitudeEntry()
+            updateSelectedDayGratitudeEntry()
         } else if selectedWeekDay > formattedCurrentDate {
             isSelectedWeekDayLaterToCurrentDate = true
             isSelectedWeekDayPreviousToCurrentDate = false
@@ -74,11 +74,11 @@ final class CurrentDayGratitudeViewModel: ObservableObject {
             isSelectedWeekDayLaterToCurrentDate = false
             isSelectedWeekDayPreviousToCurrentDate = false
             
-            selectedDayGratitudeEntry = getSelectedDayGratitudeEntry()
+            updateSelectedDayGratitudeEntry()
         }
     }
     
-    func getSelectedDayGratitudeEntry() -> String? {
+    func updateSelectedDayGratitudeEntry() {
         let filteredList = manager!.gratitudes.filter { gratitude in
             
             if let date = gratitude.createdAt {
@@ -90,7 +90,7 @@ final class CurrentDayGratitudeViewModel: ObservableObject {
             return false
         }
         
-        return filteredList.isEmpty ? nil : filteredList[0].message
+        selectedDayGratitudeEntry = filteredList.isEmpty ? nil : filteredList[0].message
     }
 }
 
