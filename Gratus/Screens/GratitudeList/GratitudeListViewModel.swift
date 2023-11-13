@@ -3,7 +3,11 @@ import Foundation
 final class GratitudeListViewModel: ObservableObject {
     
     @Published var gratitudes: [Gratitude] = []
-    @Published var isShowingGratitudeEntry = false
+    @Published var isShowingGratitudeEntry: Bool = false
+    
+    init() {
+        isShowingGratitudeEntry = false
+    }
     
     func readGratitudesListData(manager: DataManager) {
         DispatchQueue.main.async {

@@ -18,8 +18,6 @@ final class DataManager: ObservableObject {
         container.loadPersistentStores { description, error in
             if let error = error {
                 print("Not able to load core data.: \(error)")
-            } else {
-                print("Sucessfully loaded core data!")
             }
         }
         

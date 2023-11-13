@@ -5,6 +5,7 @@ struct AddGratitudeView: View {
     
     @State private var fullText = "What are you grateful for?"
     @Binding var isShowingGratitudeEntry: Bool
+    let action: () -> Void
     
     let placeholder = "What are you grateful for?"
     
@@ -14,7 +15,7 @@ struct AddGratitudeView: View {
                 Spacer()
                 
                 Button {
-                    isShowingGratitudeEntry.toggle()
+                    isShowingGratitudeEntry = false
                 } label: {
                     Label("Dismiss screen cover", systemImage: "xmark")
                         .font(.title2)
@@ -34,6 +35,8 @@ struct AddGratitudeView: View {
                     
                     manager.addGratitude(gratitude: gratitude)
                     
+                    action()
+                    
                     isShowingGratitudeEntry = false
                 }
             } label: {
@@ -44,6 +47,7 @@ struct AddGratitudeView: View {
             }
             .buttonStyle(.borderedProminent)
             .tint(.gray)
+            .offset(y: -40)
         }
         .padding(.horizontal, 20)
     }
@@ -121,6 +125,8 @@ public extension View {
 }
 
 #Preview {
-    AddGratitudeView(isShowingGratitudeEntry: .constant(false))
+    AddGratitudeView(isShowingGratitudeEntry: .constant(false)) {
+        return
+    }
         .preferredColorScheme(.dark)
 }

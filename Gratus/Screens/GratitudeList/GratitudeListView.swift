@@ -78,7 +78,9 @@ struct GratitudeListView: View {
             viewModel.readGratitudesListData(manager: manager)
         }
         .fullScreenCover(isPresented: $viewModel.isShowingGratitudeEntry) {
-            AddGratitudeView(isShowingGratitudeEntry: $viewModel.isShowingGratitudeEntry)
+            AddGratitudeView(isShowingGratitudeEntry: $viewModel.isShowingGratitudeEntry) {
+                viewModel.readGratitudesListData(manager: manager)
+            }
         }
     }
 }
