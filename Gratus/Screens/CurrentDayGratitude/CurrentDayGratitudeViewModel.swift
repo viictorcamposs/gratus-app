@@ -70,6 +70,8 @@ final class CurrentDayGratitudeViewModel: ObservableObject {
         } else if selectedWeekDay > formattedCurrentDate {
             isSelectedWeekDayLaterToCurrentDate = true
             isSelectedWeekDayPreviousToCurrentDate = false
+            
+            selectedDayGratitudeEntry = nil
         } else {
             isSelectedWeekDayLaterToCurrentDate = false
             isSelectedWeekDayPreviousToCurrentDate = false
